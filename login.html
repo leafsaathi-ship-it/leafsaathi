@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - LeafSaathi</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+body{background:#f7f5f2;}
+
+/* LOGIN BOX */
+.login-box{
+max-width:400px;
+margin:100px auto;
+padding:20px;
+}
+
+.login-box h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.input-group{
+margin:20px 0;
+}
+
+.input-group input{
+width:100%;
+padding:12px;
+border:none;
+border-bottom:1px solid #ccc;
+background:transparent;
+}
+
+.login-btn{
+width:100%;
+padding:15px;
+background:#1f3d2b;
+color:#fff;
+border:none;
+cursor:pointer;
+}
+
+.link{
+margin-top:15px;
+font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ✅ NAVBAR -->
+<div class="navbar">
+
+<a href="index.html" class="logo">
+<img src="logo.png-removebg-preview.png">
+</a>
+
+<div class="nav-menu" id="navMenu">
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="indoor.html">Indoor</a>
+<a href="outdoor.html">Outdoor</a>
+<a href="pots.html">Pots</a>
+<a href="decor.html">Decor</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
+
+<div class="nav-icons">
+<a href="https://www.instagram.com/leafsaathi" target="_blank">📷</a>
+<a href="login.html">👤</a>
+<a href="#" onclick="openCart()">🛒</a>
+</div>
+<!-- HAMBURGER -->
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+
+</div>
+
+<!-- LOGIN -->
+<div class="login-box">
+
+<small>WELCOME BACK</small>
+<h1>Sign in.</h1>
+
+<div class="input-group">
+<input type="email" id="email" placeholder="Email">
+</div>
+
+<div class="input-group">
+<input type="password" id="password" placeholder="Password">
+</div>
+<input type="file" onchange="uploadDP(event)">
+
+<button class="login-btn" onclick="login()">SIGN IN</button>
+
+<div class="link">
+New here? <a href="signup.html">Create an account</a>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+function login(){
+let email = document.getElementById("email").value;
+let pass = document.getElementById("password").value;
+
+let user = JSON.parse(localStorage.getItem(email));
+
+if(user && user.password === pass){
+alert("Login Success ✅");
+window.location.href="index.html";
+}else{
+alert("Invalid ❌");
+}
+}
+if(user && user.password === pass){
+
+localStorage.setItem("loggedInUser", email);
+
+/* 👇 DEFAULT DP SET */
+localStorage.setItem("userDP", "user.png");
+
+alert("Login Success ✅");
+window.location.href="index.html";
+}
+</script>
+<script>
+function toggleMenu() {
+    const menu = document.querySelector(".nav-menu");
+    const burger = document.querySelector(".hamburger");
+
+    menu.classList.toggle("active");
+
+    if(menu.classList.contains("active")){
+        burger.innerHTML = "✖";
+    } else {
+        burger.innerHTML = "☰";
+    }
+}
+</script>
+    <!-- FOOTER -->
+<div class="footer">
+
+  <div class="footer-grid">
+
+    <!-- LEFT -->
+    <div class="footer-left">
+      <img src="logo.png-removebg-preview.png" style="height:50px;">
+      <p>
+        Curated plants and quiet objects for mindful Indian homes.  
+        Grown with love, delivered with care.
+      </p>
+    </div>
+
+    <!-- LINKS -->
+    <div>
+      <h3>Shop</h3>
+      <a href="indoor.html">Indoor</a>
+      <a href="outdoor.html">Outdoor</a>
+      <a href="pots.html">Pots</a>
+      <a href="decor.html">Decor</a>
+    </div>
+
+    <div>
+      <h3>Company</h3>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- CONTACT -->
+    <div>
+      <h3>Contact</h3>
+      <p>📧 hello@leafsaathi.com</p>
+      <p>📱 +91 9713671554</p>
+    </div>
+
+  </div>
+
+</div>
+<!-- 🛒 CART SIDEBAR -->
+<div class="cart-sidebar" id="cartSidebar">
+
+  <div class="cart-header">
+    <h3>Your Cart</h3>
+    <span onclick="closeCart()">✕</span>
+  </div>
+
+  <div class="cart-body" id="cartItems"></div>
+
+  <div class="cart-footer">
+    <div class="subtotal">
+      Subtotal: ₹<span id="cartTotal">0</span>
+    </div>
+
+    <button class="whatsapp-btn" onclick="checkout()">
+      ORDER VIA WHATSAPP
+    </button>
+
+    <button class="view-cart-btn" onclick="window.location.href='cart.html'">
+      VIEW FULL CART
+    </button>
+  </div>
+
+</div>
+</body>
+</html>

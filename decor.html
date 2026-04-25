@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decor - LeafSaathi</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- NAVBAR -->
+<div class="navbar">
+
+    <!-- LOGO -->
+    <a href="index.html" class="logo">
+        <img src="logo.png-removebg-preview.png" alt="LeafSaathi Logo">
+    </a>
+
+    <!-- MENU -->
+    <div class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="indoor.html">Indoor</a>
+        <a href="outdoor.html">Outdoor</a>
+        <a href="pots.html">Pots</a>
+        <a href="decor.html">Decor</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="nav-right">
+
+        <!-- ICONS -->
+        <div class="nav-icons">
+            <a href="https://www.instagram.com/leafsaathi" target="_blank">📷</a>
+            <a href="login.html">👤</a>
+            <a href="#" onclick="openCart()">🛒</a>
+        </div>
+
+        <!-- HAMBURGER -->
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    </div>
+
+</div>
+ <!-- TITLE -->
+<div class="section">
+  <h2>Decor Collection</h2>
+  <p>Minimal aesthetic pieces for your space ✨</p>
+</div>
+
+<!-- AVAILABLE SOON -->
+<div class="section">
+    <div class="coming-soon">
+        <h2>Available Soon 🌿</h2>
+        <p>Beautiful Aesthetic Decor products are coming soon.</p>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer" id="footer">
+<div class="footer-grid">
+
+<!-- LEFT: Logo + Brand -->
+<div class="footer-left">
+  <div class="footer-logo">
+    <img src="logo.png-removebg-preview.png" alt="LeafSaathi Logo">
+    
+  </div>
+  <p>
+    Curated plants and quiet objects for mindful Indian homes. 
+    Grown with love, delivered with care.
+  </p>
+</div>
+
+<!-- RIGHT: Say Hello -->
+<div class="footer-contact">
+  <h3>Say Hello</h3>
+  <a href="https://instagram.com" target="_blank">@leafsaathi</a>
+  <a href="tel:+919713671554">+91 9713671554</a>
+  <a href="mailto:hello@leafsaathi.com">hello@leafsaathi.com</a>
+</div>
+
+<!-- SHOP -->
+<div>
+  <h3>Shop</h3>
+  <a href="#products">Indoor Plants</a>
+  <a href="#products">Outdoor Plants</a>
+  <a href="#products">Pots & Planters</a>
+  <a href="#products">Aesthetic Decor</a>
+</div>
+
+<!-- COMPANY -->
+<div>
+  <h3>Company</h3>
+  <a href="#">About</a>
+  <a href="#footer">Contact</a>
+</div>
+
+</div>
+</div>
+
+<!-- JS -->
+ 
+<script src="script.js"></script>
+<script>
+  
+loadProducts("decor");  <!-- 👈 IMPORTANT -->
+</script>
+
+<script>
+function toggleMenu() {
+    const menu = document.querySelector(".nav-menu");
+    const burger = document.querySelector(".hamburger");
+
+    menu.classList.toggle("active");
+
+    if(menu.classList.contains("active")){
+        burger.innerHTML = "✖";
+    } else {
+        burger.innerHTML = "☰";
+    }
+}
+ 
+</script>
+</html>

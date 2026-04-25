@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LeafSaathi - Buy Indoor Plants & Home Decor Online</title>
+
+<meta name="description" content="LeafSaathi offers beautiful indoor plants, eco-friendly home decor, and aesthetic plant accessories for your home.">
+
+<meta name="keywords" content="LeafSaathi, indoor plants, home decor, money plant, snake plant, eco-friendly plants">
+
+<meta name="author" content="LeafSaathi">
+
+<link rel="icon" type="image/png" href="logo.png-removebg-preview.png">
+<link rel="apple-touch-icon" href="logo.png-removebg-preview.png">
+
+<meta property="og:site_name" content="LeafSaathi">
+<meta property="og:title" content="LeafSaathi">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "LeafSaathi",
+  "url": "https://frolicking-hotteok-a25ceb.netlify.app",
+  "logo": "https://frolicking-hotteok-a25ceb.netlify.app/logo.png"
+}
+</script>
+
+</head>
+<body>
+<div class="navbar">
+
+  <a href="index.html" class="logo">
+    <img src="logo.png-removebg-preview.png">
+  </a>
+
+  <div class="nav-menu" id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="indoor.html">Indoor</a>
+    <a href="outdoor.html">Outdoor</a>
+    <a href="pots.html">Pots</a>
+    <a href="decor.html">Decor</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="nav-right">
+    <div class="nav-icons">
+      <a href="https://instagram.com/leafsaathi" target="_blank">
+   <i class="fa-brands fa-instagram"></i>
+</a>
+
+      <!-- 👇 LOGIN / DP SWITCH -->
+   <div class="avatar" onclick="window.location.href='login.html'">👤</div>
+
+      <img id="userDP" 
+           src="user.png" 
+           style="height:30px;width:30px;border-radius:50%;display:none;cursor:pointer;">
+
+      <a href="#" onclick="openCart()">🛒</a>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </div>
+
+</div>
+
+<!-- HERO -->
+<div class="hero">
+<div class="hero-text">
+<small>NEW SEASON - WINTER COLLECTION</small>
+<h1>Bring Nature Into Your <span class="highlight">Home</span>.</h1>
+<p>Discover calming greens curated for modern Indian homes.</p>
+
+<button class="btn btn-primary" onclick="scrollToProducts()">SHOP NOW</button>
+<button class="btn btn-outline" onclick="window.open('https://www.instagram.com/leafsaathi?igsh=MTM0ejI2bXB6bTRpMg==')">
+FOLLOW ON INSTAGRAM
+</button>
+</div>
+
+<div class="hero-images">
+<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6">
+<div class="side-grid">
+<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6">
+<div class="green-box">Free shipping on orders ₹999+</div>
+</div>
+</div>
+</div>
+
+<!-- CATEGORIES -->
+<div class="section">
+<h2>Pick your corner of calm.</h2>
+
+
+
+
+<div class="categories">
+<a href="indoor.html" class="cat-card">
+<img src="https://images.unsplash.com/photo-1600411833196-7c1f6b1a8b90?q=80&w=464&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+<div class="cat-overlay">Indoor Plants →</div>
+</a>
+
+<a href="outdoor.html" class="cat-card">
+<img src="https://www.gardendesign.com/pictures/images/675x529Max/site_3/blushing-bride-caladium-caladium-hortulanum-proven-winners_16132.jpg">
+<div class="cat-overlay">Outdoor Plants →</div>
+</a>
+
+<a href="pots.html" class="cat-card">
+<img src="https://www.gardendesign.com/pictures/images/675x529Max/site_3/sansevieria-trifasciata-laurentii-houseplant-green-leaves-shutterstock-com_14449.jpg">
+<div class="cat-overlay">Pots & Planters →</div>
+</a>
+
+<a href="decor.html" class="cat-card">
+<img src="https://www.ugaoo.com/cdn/shop/files/1_da069a19-bb37-40a4-b196-7d0610a89582.jpg?v=1741698806&width=750">
+<div class="cat-overlay">Aesthetic Decor →</div>
+</a>
+</div>
+
+<div class="marquee">
+
+  <div class="marquee-track">
+    <span>Free Shipping ₹999+</span>
+    <span>• Nature-inspired</span>
+    <span>• Premium Quality</span>
+    <span>• Root-safe Packaging</span>
+    <span>• Made in India</span>
+    <span>• Trusted by 1000+ Homes</span>
+
+    <!-- duplicate for smooth loop -->
+    <span>Free Shipping ₹999+</span>
+    <span>• Nature-inspired</span>
+    <span>• Premium Quality</span>
+    <span>• Root-safe Packaging</span>
+    <span>• Made in India</span>
+    <span>• Trusted by 1000+ Homes</span>
+  </div>
+
+</div>
+
+<!-- PRODUCTS -->
+<div class="section" id="products">
+<h2>Quietly chosen, for everyday.</h2>
+<div class="products" id="product-list"></div>
+</div>
+
+<div class="features-section">
+
+  <h2>More than décor — they quietly give back.</h2>
+
+  <div class="features">
+
+    <div class="feature-box">
+      <h3>Air Purification</h3>
+      <p>Plants that clean and refresh your indoor air.</p>
+    </div>
+
+    <div class="feature-box">
+      <h3>Aesthetic Calm</h3>
+      <p>Sculptural foliage that brings peaceful vibes.</p>
+    </div>
+
+    <div class="feature-box">
+      <h3>Thoughtful Gifting</h3>
+      <p>Perfect for birthdays, weddings & special moments.</p>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer" id="footer">
+<div class="footer-grid">
+
+<!-- LEFT: Logo + Brand -->
+<div class="footer-left">
+  <div class="footer-logo">
+    <img src="logo.png-removebg-preview.png" alt="LeafSaathi Logo">
+    
+  </div>
+  <p>
+    Curated plants and quiet objects for mindful Indian homes. 
+    Grown with love, delivered with care.
+  </p>
+</div>
+
+<!-- RIGHT: Say Hello -->
+<div class="footer-contact">
+  <h3>Say Hello</h3>
+  <a href="https://instagram.com" target="_blank">@leafsaathi</a>
+  <a href="tel:+919876543210">+91 98765 43210</a>
+  <a href="mailto:hello@leafsaathi.com">hello@leafsaathi.com</a>
+</div>
+
+<!-- SHOP -->
+<div>
+  <h3>Shop</h3>
+  <a href="#products">Indoor Plants</a>
+  <a href="#products">Outdoor Plants</a>
+  <a href="#products">Pots & Planters</a>
+  <a href="#products">Aesthetic Decor</a>
+</div>
+
+<!-- COMPANY -->
+<div>
+  <h3>Company</h3>
+  <a href="#">About</a>
+  <a href="#footer">Contact</a>
+</div>
+
+</div>
+</div>
+
+<!-- ✅ PRODUCT DETAIL MODAL -->
+<div class="modal" id="modal" onclick="closeModal(event)">
+<div class="modal-content">
+
+<img id="modal-img">
+
+<div class="modal-details">
+
+<h2 id="modal-name"></h2>
+<p class="rating">4.6 · 39 reviews</p>
+
+<div class="price">
+₹<span id="modal-price"></span>
+<span class="old">₹1,999</span>
+</div>
+
+<p class="desc">
+Set of three minimalist stoneware planters in soft neutral tones.
+</p>
+
+<div class="qty">
+<button onclick="changeQty(-1)">-</button>
+<span id="qty">1</span>
+<button onclick="changeQty(1)">+</button>
+</div>
+
+<button class="add-btn" onclick="addToCart()">Add to cart</button>
+<button class="add-btn" onclick="orderNow()">Order Now via WhatsApp</button>
+
+<div class="features-box">
+<div>🚚 Free shipping<br>Orders ₹999+</div>
+<div>🌱 Root-safe<br>30-day health</div>
+<div>📦 Care guide</div>
+<div>🎁 In every box</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<script src="script.js"></script>
+<!-- 🛒 SLIDE CART -->
+<div class="cart-sidebar" id="cartSidebar">
+
+  <div class="cart-header">
+    <h3>Your Cart</h3>
+    <span onclick="closeCart()">✕</span>
+  </div>
+
+  <div class="cart-body" id="cartItems"></div>
+
+  <div class="cart-footer">
+    <div class="subtotal">
+      Subtotal: ₹<span id="cartTotal">0</span>
+    </div>
+
+    <button class="whatsapp-btn" onclick="checkout()">
+      📱 ORDER VIA WHATSAPP
+    </button>
+
+    <button class="view-cart-btn" onclick="window.location.href='cart.html'">
+      VIEW FULL CART
+    </button>
+  </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pots & Planters - LeafSaathi</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- NAVBAR -->
+<div class="navbar">
+
+  <a href="index.html" class="logo">
+    <img src="logo.png-removebg-preview.png">
+  </a>
+
+  <div class="nav-menu">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="indoor.html">Indoor</a>
+    <a href="outdoor.html">Outdoor</a>
+    <a href="pots.html">Pots</a>
+    <a href="decor.html">Decor</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="nav-icons">
+    <a href="https://instagram.com" target="_blank">📷</a>
+    <a href="login.html">👤</a>
+    <a href="#" onclick="openCart()">🛒</a>
+  </div>
+
+  <!-- HAMBURGER -->
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+</div>
+
+<!-- TITLE -->
+<div class="section">
+  <h2>Pots & Planters</h2>
+  <p>Stylish homes for your plants 🪴</p>
+</div>
+
+<!-- PRODUCTS -->
+<div class="section">
+  <div class="products" id="product-list"></div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer" id="footer">
+<div class="footer-grid">
+
+<!-- LEFT: Logo + Brand -->
+<div class="footer-left">
+  <div class="footer-logo">
+    <img src="logo.png-removebg-preview.png" alt="LeafSaathi Logo">
+    
+  </div>
+  <p>
+    Curated plants and quiet objects for mindful Indian homes. 
+    Grown with love, delivered with care.
+  </p>
+</div>
+
+<!-- RIGHT: Say Hello -->
+<div class="footer-contact">
+  <h3>Say Hello</h3>
+  <a href="https://instagram.com" target="_blank">@leafsaathi</a>
+  <a href="tel:+919713671554">+91 98765 43210</a>
+  <a href="mailto:hello@leafsaathi.com">hello@leafsaathi.com</a>
+</div>
+
+<!-- SHOP -->
+<div>
+  <h3>Shop</h3>
+  <a href="#products">Indoor Plants</a>
+  <a href="#products">Outdoor Plants</a>
+  <a href="#products">Pots & Planters</a>
+  <a href="#products">Aesthetic Decor</a>
+</div>
+
+<!-- COMPANY -->
+<div>
+  <h3>Company</h3>
+  <a href="#">About</a>
+  <a href="#footer">Contact</a>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<!-- JS -->
+<script src="script.js"></script>
+<script>
+loadProducts("pots");  <!-- 👈 IMPORTANT -->
+</script>
+
+<script>
+function toggleMenu() {
+    const menu = document.querySelector(".nav-menu");
+    const burger = document.querySelector(".hamburger");
+
+    menu.classList.toggle("active");
+
+    if(menu.classList.contains("active")){
+        burger.innerHTML = "✖";
+    } else {
+        burger.innerHTML = "☰";
+    }
+}
+</script>
+<!-- 🛒 CART SIDEBAR -->
+<div class="cart-sidebar" id="cartSidebar">
+
+  <div class="cart-header">
+    <h3>Your Cart</h3>
+    <span onclick="closeCart()">✕</span>
+  </div>
+
+  <div class="cart-body" id="cartItems"></div>
+
+  <div class="cart-footer">
+    <div class="subtotal">
+      Subtotal: ₹<span id="cartTotal">0</span>
+    </div>
+
+    <button class="whatsapp-btn" onclick="checkout()">
+      ORDER VIA WHATSAPP
+    </button>
+
+    <button class="view-cart-btn" onclick="window.location.href='cart.html'">
+      VIEW FULL CART
+    </button>
+  </div>
+
+</div>
+</body>
+</html>

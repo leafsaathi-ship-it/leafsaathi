@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LeafSaathi Product</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f7f5f2;}
+
+/* NAVBAR */
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:#fff;
+}
+
+.logo img{
+height: 100px;
+}
+
+.nav-menu{
+display:flex;
+gap:25px;
+}
+
+.nav-menu a{
+text-decoration:none;
+color:#1f1f1f;
+font-size:14px;
+}
+
+.nav-icons{
+display:flex;
+gap:15px;
+font-size:18px;
+cursor:pointer;
+}
+
+/* PRODUCT */
+.product-page{
+display:flex;
+gap:60px;
+padding:60px;
+}
+
+.product-img img{
+width:400px;
+border-radius:10px;
+}
+
+.product-info{
+max-width:500px;
+}
+
+.product-info h1{
+font-family:'Playfair Display', serif;
+font-size:32px;
+margin-bottom:10px;
+}
+
+.rating{
+color:#777;
+margin-bottom:10px;
+}
+
+.price{
+font-size:28px;
+font-weight:600;
+margin-bottom:10px;
+}
+
+.price .old{
+text-decoration:line-through;
+font-size:16px;
+color:#999;
+margin-left:10px;
+}
+
+.desc{
+margin:20px 0;
+color:#555;
+}
+
+/* BUTTONS */
+.actions{
+display:flex;
+align-items:center;
+gap:15px;
+margin-bottom:20px;
+}
+
+.qty{ 
+display:flex;
+gap:10px;
+align-items:center;
+}
+
+.qty button{
+padding:5px 12px;
+cursor:pointer;
+}
+
+.cart-btn{
+background:#1f3d2b;
+color:#fff;
+padding:12px 25px;
+border:none;
+cursor:pointer;
+}
+
+.whatsapp-btn{
+background:#c97b63;
+color:#fff;
+padding:12px;
+border:none;
+width:100%;
+margin-top:10px;
+cursor:pointer;
+}
+
+/* FEATURES */
+.features{
+display:flex;
+gap:20px;
+margin-top:20px;
+}
+
+.feature{
+font-size:14px;
+color:#444;
+}
+/* FOOTER */
+.footer{
+background:#dff5e1; /* light green */
+padding:50px 40px;
+margin-top:40px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:2fr 1fr 1fr 1fr;
+gap:30px;
+}
+
+.footer-logo{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:10px;
+}
+
+.footer-logo img{
+height:150px;
+}
+
+.footer h3{
+margin-bottom:10px;
+color:#000;
+}
+
+.footer p{
+font-size:14px;
+color:#000;
+margin:5px 0;
+}
+
+.footer-contact{
+padding-left:20px;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:15px 20px;
+    background:#fff;
+}
+
+/* LOGO */
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+/* MENU (DESKTOP) */
+.nav-menu{
+    display:flex;
+    gap:25px;
+}
+
+/* ICONS RIGHT */
+.nav-icons{
+    display:flex;
+    gap:15px;
+    align-items:center;
+}
+
+/* HAMBURGER (hidden on desktop) */
+.hamburger{
+    display:none;
+    font-size:24px;
+    cursor:pointer;
+}
+
+/* ================= PRODUCT SECTION ================= */
+.product-page{
+    display:flex;
+    gap:50px;
+}
+
+/* IMAGE */
+.product-img img{
+    width:400px;
+}
+
+/* ================= FOOTER ================= */
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media(max-width:768px){
+
+/* NAVBAR */
+.nav-menu{
+    display:none; /* hide menu */
+    flex-direction:column;
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:#fff;
+    padding:20px;
+    gap:15px;
+}
+
+.nav-menu.active{
+    display:flex;
+}
+
+.hamburger{
+    display:block;
+}
+
+/* KEEP ICONS RIGHT */
+.nav-icons{
+    margin-left:auto;
+}
+
+/* PRODUCT STACK */
+.product-page{
+    flex-direction:column;
+    padding:20px;
+}
+
+.product-img img{
+    width:100%;
+}
+
+/* BUTTONS FULL WIDTH */
+.cart-btn,
+.whatsapp-btn{
+    width:100%;
+}
+
+/* FEATURES STACK */
+.features{
+    flex-direction:column;
+}
+
+/* FOOTER 1 COLUMN */
+.footer-grid{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ✅ YOUR NAVBAR -->
+<div class="navbar">
+
+<a href="index.html" class="logo">
+  <img src="logo.png-removebg-preview.png">
+</a>
+
+<div class="nav-menu">
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="indoor.html">Indoor</a>
+<a href="outdoor.html">Outdoor</a>
+<a href="pots.html">Pots</a>
+<a href="decor.html">Decor</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
+
+<div class="nav-icons">
+<a href="https://instagram.com" target="_blank">📷</a>
+<a href="login.html">👤</a>
+<a href="#" onclick="openCart()">🛒</a>
+</div>
+<!-- HAMBURGER -->
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+</div>
+
+<!-- PRODUCT -->
+<div class="product-page">
+
+<div class="product-img">
+<img id="product-img">
+</div>
+
+<div class="product-info">
+
+<h1 id="product-name"></h1>
+
+<div class="rating">⭐⭐⭐⭐☆ 4.6 • 39 reviews</div>
+
+<div class="price">
+₹<span id="product-price"></span>
+<span class="old">₹1,999</span>
+</div>
+
+<p class="desc">
+Set of three minimalist stoneware planters in soft neutral tones.
+</p>
+
+<div class="actions">
+<div class="qty">
+<button onclick="changeQty(-1)">-</button>
+<span id="qty">1</span>
+<button onclick="changeQty(1)">+</button>
+</div>
+
+<button class="cart-btn" onclick="addToCart()">
+ADD TO CART
+</button>
+</div>
+
+<button class="whatsapp-btn" onclick="orderNow()">
+ORDER NOW VIA WHATSAPP
+</button>
+
+<div class="features">
+<div class="feature">🚚 Free shipping<br>Orders ₹999+</div>
+<div class="feature">🌱 Root-safe<br>30-day health</div>
+<div class="feature">🍃 Care guide<br>In every box</div>
+</div>
+
+</div>
+</div>
+
+<script>
+
+// LOAD PRODUCT
+let product = JSON.parse(localStorage.getItem('selectedProduct'));
+
+if(product){
+document.getElementById('product-img').src = product.img;
+document.getElementById('product-name').innerText = product.name;
+document.getElementById('product-price').innerText = product.price;
+}
+
+// QTY
+let qty = 1;
+
+function changeQty(val){
+qty = Math.max(1, qty + val);
+document.getElementById('qty').innerText = qty;
+}
+
+// ADD TO CART
+function addToCart(){
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+let existing = cart.find(item => item.name === product.name);
+
+if(existing){
+existing.qty += qty;
+}else{
+cart.push({
+name: product.name,
+price: product.price,
+qty: qty,
+img: product.img
+});
+}
+
+localStorage.setItem('cart', JSON.stringify(cart));
+
+alert("Added to Cart ✅");
+}
+
+// WHATSAPP
+function orderNow(){
+let msg = `Hello, I want to order ${product.name} x${qty}`;
+window.open(`https://wa.me/919713671554?text=${encodeURIComponent(msg)}`);
+}
+
+// CART ICON CLICK
+function openCart(){
+alert("Cart sidebar add karo (index jaisa)");
+}
+
+function toggleMenu(){
+    document.querySelector(".nav-menu").classList.toggle("active");
+}
+</script>
+<script>
+function toggleMenu() {
+    const menu = document.querySelector(".nav-menu");
+    const burger = document.querySelector(".hamburger");
+
+    menu.classList.toggle("active");
+
+    if(menu.classList.contains("active")){
+        burger.innerHTML = "✖";
+    } else {
+        burger.innerHTML = "☰";
+    }
+}
+</script>
+<!-- FOOTER -->
+<div class="footer">
+
+  <div class="footer-grid">
+
+    <!-- LEFT: Logo + Text -->
+    <div class="footer-left">
+      <div class="footer-logo">
+        <img src="logo.png-removebg-preview.png" alt="LeafSaathi Logo">
+        
+      </div>
+      <p>
+        Curated plants and quiet objects for mindful Indian homes.
+        Grown with love, delivered with care.
+      </p>
+    </div>
+
+    <!-- SAY HELLO -->
+    <div class="footer-contact">
+      <h3>Say Hello</h3>
+      <p>@leafsaathi</p>
+      <p>+91 98765 43210</p>
+      <p>hello@leafsaathi.com</p>
+    </div>
+
+    <!-- SHOP -->
+    <div>
+      <h3>Shop</h3>
+      <p>Indoor Plants</p>
+      <p>Outdoor Plants</p>
+      <p>Pots & Planters</p>
+      <p>Aesthetic Decor</p>
+    </div>
+
+    <!-- COMPANY -->
+    <div>
+      <h3>Company</h3>
+      <p>About</p>
+      <p>Contact</p>
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>

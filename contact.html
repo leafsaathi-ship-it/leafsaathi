@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - LeafSaathi</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* PAGE */
+body{
+background:#f7f5f2;
+font-family: 'Poppins', sans-serif;
+}
+
+/* CONTACT SECTION */
+.contact-section{
+display:flex;
+justify-content:space-between;
+padding:80px;
+gap:50px;
+}
+
+/* LEFT SIDE */
+.contact-left{
+max-width:500px;
+}
+
+.contact-left small{
+color:#c97b63;
+letter-spacing:2px;
+}
+
+.contact-left h1{
+font-size:50px;
+margin:20px 0;
+line-height:1.2;
+}
+
+.contact-left p{
+color:#666;
+margin-bottom:30px;
+}
+
+.contact-info div{
+margin:15px 0;
+font-size:14px;
+color:#333;
+}
+
+/* RIGHT FORM */
+.contact-form{
+flex:1;
+background:#fff;
+padding:40px;
+border:1px solid #eee;
+}
+
+.contact-form input,
+.contact-form textarea{
+width:100%;
+padding:12px;
+margin:15px 0;
+border:none;
+border-bottom:1px solid #ccc;
+outline:none;
+background:transparent;
+}
+
+.contact-form button{
+background:#1f3d2b;
+color:#fff;
+padding:15px 25px;
+border:none;
+cursor:pointer;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.contact-section{
+flex-direction:column;
+padding:30px;
+}
+
+.contact-left h1{
+font-size:32px;
+}
+}
+
+.footer-left img{
+width:200px;   /* size change yahan karo */
+height:auto;
+}
+.footer-left{
+display:flex;
+flex-direction:column;   /* 👈 important */
+align-items:flex-start;  /* left align */
+gap:10px;
+}
+
+.footer-left img{
+width:140px;
+height:auto;
+}
+
+.footer-left p{
+margin:0;
+color:#ccc;
+font-size:14px;
+max-width:250px;
+}
+.footer-left img{
+width:300px;
+  /* 👈 logo ke peeche white bg */
+padding:5px;
+border-radius:6px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ✅ NAVBAR -->
+<div class="navbar">
+
+<a href="index.html" class="logo">
+<img src="logo.png-removebg-preview.png">
+</a>
+
+<div class="nav-menu" id="navMenu">
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="indoor.html">Indoor</a>
+<a href="outdoor.html">Outdoor</a>
+<a href="pots.html">Pots</a>
+<a href="decor.html">Decor</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
+
+<div class="nav-icons">
+<a href="https://www.instagram.com/leafsaathi" target="_blank">📷</a>
+<a href="login.html">👤</a>
+<a href="#" onclick="openCart()">🛒</a>
+</div>
+
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+
+</div>
+
+<!-- CONTACT -->
+<div class="contact-section">
+
+<!-- LEFT -->
+<div class="contact-left">
+
+<small>SAY HELLO</small>
+
+<h1>Let's grow something together.</h1>
+
+<p>
+Questions about plants, bulk orders, or gifting? Reach out —
+a real human will write back, usually within 24 hours.
+</p>
+
+<div class="contact-info">
+<div>📷 Instagram<br>@leafsaathi</div>
+<div>📱 WhatsApp<br>+91- 9713671554</div>
+<div>📧 Email<br>hello@leafsaathi.com</div>
+<div>📍 Studio<br>Bengaluru, India • Shipping nationwide</div>
+</div>
+
+</div>
+
+<!-- RIGHT FORM -->
+<div class="contact-form">
+
+<input type="text" placeholder="NAME">
+<input type="email" placeholder="EMAIL">
+<textarea rows="5" placeholder="MESSAGE"></textarea>
+
+<button onclick="sendMessage()">SEND MESSAGE</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+function sendMessage(){
+
+let name = document.querySelector('input[placeholder="NAME"]').value;
+let email = document.querySelector('input[placeholder="EMAIL"]').value;
+let message = document.querySelector('textarea').value;
+
+if(name === "" || email === "" || message === ""){
+alert("Please fill all fields ❌");
+return;
+}
+
+// ✅ clean message
+let text = `🌿 New Contact Request
+
+👤 Name: ${name}
+📧 Email: ${email}
+
+💬 Message:
+${message}`;
+
+// ✅ CORRECT number format (NO SPACE / NO +)
+let phone = "919713671554";
+
+// ✅ encode ONLY ONCE
+let url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+
+// ✅ open WhatsApp
+window.open(url, "_blank");
+
+}
+</script>
+<script>
+function toggleMenu() {
+    const menu = document.querySelector(".nav-menu");
+    const burger = document.querySelector(".hamburger");
+
+    menu.classList.toggle("active");
+
+    if(menu.classList.contains("active")){
+        burger.innerHTML = "✖";
+    } else {
+        burger.innerHTML = "☰";
+    }
+}
+</script>
+<!-- FOOTER -->
+<div class="footer">
+
+  <div class="footer-grid">
+
+    <!-- LEFT -->
+    <div class="footer-left">
+      <img src="logo.png-removebg-preview.png" 
+      <p>
+        Curated plants and quiet objects for mindful Indian homes.  
+        Grown with love, delivered with care.
+      </p>
+    </div>
+
+    <!-- LINKS -->
+    <div>
+      <h3>Shop</h3>
+      <a href="indoor.html">Indoor</a>
+      <a href="outdoor.html">Outdoor</a>
+      <a href="pots.html">Pots</a>
+      <a href="decor.html">Decor</a>
+    </div>
+
+    <div>
+      <h3>Company</h3>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- CONTACT -->
+    <div>
+      <h3>Contact</h3>
+      <p>📧 hello@leafsaathi.com</p>
+      <p>📱 +91- 9713671554</p>
+    </div>
+
+  </div>
+
+</div>
+<!-- 🛒 CART SIDEBAR -->
+<div class="cart-sidebar" id="cartSidebar">
+
+  <div class="cart-header">
+    <h3>Your Cart</h3>
+    <span onclick="closeCart()">✕</span>
+  </div>
+
+  <div class="cart-body" id="cartItems"></div>
+
+  <div class="cart-footer">
+    <div class="subtotal">
+      Subtotal: ₹<span id="cartTotal">0</span>
+    </div>
+
+    <button class="whatsapp-btn" onclick="checkout()">
+      ORDER VIA WHATSAPP
+    </button>
+
+    <button class="view-cart-btn" onclick="window.location.href='cart.html'">
+      VIEW FULL CART
+    </button>
+  </div>
+
+</div>
+</body>
+</html>
